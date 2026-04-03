@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - TruthLens AI</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-brain" style="color: #00d4ff;"></i>
+                <span>TruthLens <span class="text-gradient">AI</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="features.html" class="nav-link">Features</a></li>
+                <li><a href="demo.html" class="nav-link btn-demo">Try Demo</a></li>
+                <li><a href="privacy.html" class="nav-link">Privacy</a></li>
+            </ul>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="container">
+            <h1 class="hero-title">How TruthLens AI Works</h1>
+            <p class="hero-subtitle">A deep dive into our AI architecture and analysis methodology</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section style="padding: 3rem var(--spacing-lg);">
+        <div class="container">
+            
+            <!-- Architecture Overview -->
+            <div style="margin-bottom: 4rem;">
+                <h2 class="section-title">AI Architecture</h2>
+                <div class="features-grid">
+                    <div class="glass-effect feature-card">
+                        <div class="feature-icon"><i class="fas fa-upload"></i></div>
+                        <h3>Input Processing</h3>
+                        <p>User uploads conversation text with explicit consent. System anonymizes and preprocesses data.</p>
+                    </div>
+                    <div class="glass-effect feature-card">
+                        <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                        <h3>NLP Analysis</h3>
+                        <p>Advanced Natural Language Processing extracts linguistic features and sentiment patterns.</p>
+                    </div>
+                    <div class="glass-effect feature-card">
+                        <div class="feature-icon"><i class="fas fa-flask"></i></div>
+                        <h3>Pattern Detection</h3>
+                        <p>ML algorithms identify deception markers, emotional shifts, and behavioral anomalies.</p>
+                    </div>
+                    <div class="glass-effect feature-card">
+                        <div class="feature-icon"><i class="fas fa-star"></i></div>
+                        <h3>Scoring Engine</h3>
+                        <p>Proprietary algorithm generates trustworthiness scores and risk metrics.</p>
+                    </div>
+                    <div class="glass-effect feature-card">
+                        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Report Generation</h3>
+                        <p>Creates comprehensive analysis with visualizations and actionable insights.</p>
+                    </div>
+                    <div class="glass-effect feature-card">
+                        <div class="feature-icon"><i class="fas fa-trash"></i></div>
+                        <h3>Privacy Cleanup</h3>
+                        <p>Data is immediately purged. No permanent storage or external sharing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Workflow -->
+            <div style="margin-bottom: 4rem;">
+                <h2 class="section-title">Detailed Workflow</h2>
+                
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="glass-effect" style="padding: 2rem; margin-bottom: 1.5rem; border: 2px solid var(--border-color);">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-1"></i> Data Ingestion</h3>
+                        <p>User submits conversation (WhatsApp, Instagram, manually typed). System:</p>
+                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem; color: var(--text-secondary);">
+                            <li>✓ Validates input format</li>
+                            <li>✓ Removes PII (phone numbers, addresses)</li>
+                            <li>✓ Normalizes text encoding</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-effect" style="padding: 2rem; margin-bottom: 1.5rem; border: 2px solid var(--border-color);">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-2"></i> Preprocessing</h3>
+                        <p>Text is cleaned and tokenized for analysis:</p>
+                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem; color: var(--text-secondary);">
+                            <li>✓ Lowercase conversion</li>
+                            <li>✓ Tokenization (words, sentences)</li>
+                            <li>✓ Stopword removal</li>
+                            <li>✓ Lemmatization</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-effect" style="padding: 2rem; margin-bottom: 1.5rem; border: 2px solid var(--border-color);">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-3"></i> Feature Extraction</h3>
+                        <p>Extract linguistic and behavioral signals:</p>
+                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem; color: var(--text-secondary);">
+                            <li>✓ Sentiment scores (VADER/TransformerBERT)</li>
+                            <li>✓ Word frequency analysis</li>
+                            <li>✓ Pronoun usage patterns</li>
+                            <li>✓ Modifier intensity (very, definitely, etc.)</li>
+                            <li>✓ Question frequency</li>
+                            <li>✓ Message latency/gaps</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-effect" style="padding: 2rem; margin-bottom: 1.5rem; border: 2px solid var(--border-color);">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-4"></i> Pattern Detection</h3>
+                        <p>ML model identifies behavioral patterns:</p>
+                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem; color: var(--text-secondary);">
+                            <li>✓ Logical contradictions</li>
+                            <li>✓ Evasion tactics</li>
+                            <li>✓ Emotional consistency</li>
+                            <li>✓ Response symmetry</li>
+                            <li>✓ Baseline deviation</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-effect" style="padding: 2rem; margin-bottom: 1.5rem; border: 2px solid var(--border-color);">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-5"></i> Scoring & Analysis</h3>
+                        <p>Aggregate features into actionable metrics:</p>
+                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem; color: var(--text-secondary);">
+                            <li>✓ Trust Score (0-100)</li>
+                            <li>✓ Risk Indicators (High/Medium/Low)</li>
+                            <li>✓ Emotional Arc</li>
+                            <li>✓ Consistency Index</li>
+                            <li>✓ Engagement Level</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-effect" style="padding: 2rem; border: 2px solid var(--border-color);">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-6"></i> Secure Cleanup</h3>
+                        <p>Immediate data purge after analysis:</p>
+                        <ul style="margin-top: 0.5rem; margin-left: 1.5rem; color: var(--text-secondary);">
+                            <li>✓ Session data deleted</li>
+                            <li>✓ Temporary files wiped</li>
+                            <li>✓ Cache cleared</li>
+                            <li>✓ No backups retained</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div style="margin-bottom: 4rem;">
+                <h2 class="section-title">Technology Stack</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div class="glass-effect" style="padding: 1.5rem;">
+                        <h3 style="color: var(--primary);">NLP Libraries</h3>
+                        <ul style="list-style: none; color: var(--text-secondary);">
+                            <li>• spaCy (tokenization, POS)</li>
+                            <li>• NLTK (sentiment, analysis)</li>
+                            <li>• Transformers (BERT/DistilBERT)</li>
+                            <li>• VADER (sentiment intensity)</li>
+                        </ul>
+                    </div>
+                    <div class="glass-effect" style="padding: 1.5rem;">
+                        <h3 style="color: var(--primary);">ML/AI Models</h3>
+                        <ul style="list-style: none; color: var(--text-secondary);">
+                            <li>• OpenAI GPT-4 (insights)</li>
+                            <li>• Scikit-learn (classification)</li>
+                            <li>• LightGBM (pattern detection)</li>
+                            <li>• XGBoost (scoring)</li>
+                        </ul>
+                    </div>
+                    <div class="glass-effect" style="padding: 1.5rem;">
+                        <h3 style="color: var(--primary);">Backend</h3>
+                        <ul style="list-style: none; color: var(--text-secondary);">
+                            <li>• FastAPI (Python)</li>
+                            <li>• Node.js/Express (optional)</li>
+                            <li>• Docker (containerization)</li>
+                            <li>• Redis (caching)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TruthLens AI</h4>
+                    <p>Advanced chat analysis powered by AI and NLP.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TruthLens AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

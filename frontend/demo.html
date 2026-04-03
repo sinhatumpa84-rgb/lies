@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruthLens AI Demo - Try Interactive Analysis</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/demo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-brain" style="color: #00d4ff;"></i>
+                <span>TruthLens <span class="text-gradient">AI</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="features.html" class="nav-link">Features</a></li>
+                <li><a href="demo.html" class="nav-link btn-demo">Try Demo</a></li>
+                <li><a href="privacy.html" class="nav-link">Privacy</a></li>
+            </ul>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Demo Section -->
+    <section class="demo-hero">
+        <div class="container">
+            <h1>Interactive Demo</h1>
+            <p>Paste a conversation sample below and see how TruthLens AI analyzes it in real-time.</p>
+        </div>
+    </section>
+
+    <!-- Main Demo Container -->
+    <section class="demo-section">
+        <div class="container demo-container">
+            
+            <!-- Input Panel -->
+            <div class="demo-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-comment-dots"></i> Input Conversation</h2>
+                </div>
+                <div class="demo-form">
+                    <div class="form-group">
+                        <label for="chatInput">Paste conversation text here:</label>
+                        <textarea id="chatInput" placeholder="Paste WhatsApp, Instagram, or any chat conversation here...
+Example:
+Person A: Hey! How have you been?
+Person B: Good, busy with work...
+Person A: We should catch up soon!
+Person B: Yeah maybe..." rows="10"></textarea>
+                        <p class="form-hint">
+                            <i class="fas fa-info-circle"></i> 
+                            Format: One message per line with sender name or timestamp
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="analysisType">Analysis Type:</label>
+                        <select id="analysisType">
+                            <option value="balanced">Balanced Analysis</option>
+                            <option value="deception">Deception Patterns Focus</option>
+                            <option value="emotional">Emotional Tone Focus</option>
+                            <option value="behavioral">Behavioral Patterns Focus</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="conversationType">Conversation Type:</label>
+                        <select id="conversationType">
+                            <option value="auto">Auto-Detect (AI vs Human)</option>
+                            <option value="human">Human Conversation</option>
+                            <option value="ai">AI Conversation (ChatGPT, Gemini, etc.)</option>
+                        </select>
+                    </div>
+
+                    <!-- Voice Message Upload -->
+                    <div class="form-group">
+                        <label for="voiceInput"><i class="fas fa-microphone"></i> Or Upload WhatsApp Voice Message:</label>
+                        <input type="file" id="voiceInput" accept="audio/*" />
+                        <p class="form-hint">
+                            <i class="fas fa-info-circle"></i> 
+                            Supported: MP3, WAV, M4A, OGG (WhatsApp voice messages)
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enableGrok">
+                            <input type="checkbox" id="enableGrok" />
+                            <span>Use Grok AI for Advanced Analysis (SNK + Voice)</span>
+                        </label>
+                    </div>
+
+                    <button class="btn btn-primary btn-large" id="analyzeBtn">
+                        <i class="fas fa-sparkles"></i> Analyze Conversation
+                    </button>
+
+                    <button class="btn btn-secondary" id="clearBtn">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+
+                    <!-- Sample Buttons -->
+                    <div class="sample-buttons">
+                        <p>Try a sample:</p>
+                        <button class="btn-sample" onclick="loadSample('honest')">Honest Chat</button>
+                        <button class="btn-sample" onclick="loadSample('deceptive')">Deceptive Pattern</button>
+                        <button class="btn-sample" onclick="loadSample('ghosting')">Ghosting Signals</button>
+                        <button class="btn-sample" onclick="loadSample('ai')">AI Response (ChatGPT/Gemini)</button>
+                        <button class="btn-sample" onclick="loadSample('casual_human')">Casual Human Chat</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="demo-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-chart-line"></i> Analysis Results</h2>
+                </div>
+                <div id="resultsPanel" class="results-panel">
+                    <div class="empty-state">
+                        <i class="fas fa-inbox"></i>
+                        <p>Results will appear here after analyzing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <section class="demo-disclaimer">
+        <div class="container">
+            <div class="glass-effect disc-content">
+                <h3><i class="fas fa-exclamation-circle"></i> Important Disclaimer</h3>
+                <p>
+                    <strong>TruthLens AI provides AI-based predictions and behavioral analysis only.</strong>
+                    These results:
+                </p>
+                <ul>
+                    <li>May not be 100% accurate and should not be used as definitive proof</li>
+                    <li>Cannot replace professional psychological evaluation or counseling</li>
+                    <li>Are based on linguistic patterns and NLP analysis, not absolute truth detection</li>
+                    <li>Should be interpreted with skepticism and combined with human judgment</li>
+                </ul>
+                <p><strong>Your data:</strong> All input is processed locally in this demo and NOT sent to any server or stored.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TruthLens AI</h4>
+                    <p>Advanced chat analysis powered by AI and NLP.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="features.html">Features</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TruthLens AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/demo.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

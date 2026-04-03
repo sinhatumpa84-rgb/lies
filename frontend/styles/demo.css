@@ -1,0 +1,624 @@
+/* ===================================
+   TRUTHLENS AI - Demo Stylesheet
+   ==================================== */
+
+.demo-hero {
+    padding: 3rem var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(163, 102, 255, 0.1) 100%);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.demo-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.demo-hero p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* ================================
+   DEMO LAYOUT
+   ================================ */
+
+.demo-section {
+    padding: 3rem var(--spacing-lg);
+    min-height: 80vh;
+}
+
+.demo-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.demo-panel {
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    background: rgba(0, 212, 255, 0.1);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem;
+}
+
+.panel-header h2 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ================================
+   FORM STYLES
+   ================================ */
+
+.demo-form {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.form-group textarea,
+.form-group select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.95rem;
+    resize: vertical;
+    transition: var(--transition);
+}
+
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(0, 212, 255, 0.05);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+.form-group textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+.form-hint {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: -0.3rem;
+}
+
+.form-hint i {
+    color: var(--primary);
+}
+
+/* ================================
+   BUTTONS
+   ================================ */
+
+.demo-form .btn {
+    width: 100%;
+}
+
+.btn-sample-group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-sample {
+    flex: 1;
+    min-width: 120px;
+    padding: 0.6rem 1rem;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.btn-sample:hover {
+    background: rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.sample-buttons {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
+.sample-buttons p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.sample-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* ================================
+   RESULTS PANEL
+   ================================ */
+
+.results-panel {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    color: var(--primary);
+    opacity: 0.3;
+    margin-bottom: 1rem;
+}
+
+/* ================================
+   RESULTS DISPLAYS
+   ================================ */
+
+.trust-score-container {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.trust-score-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.trust-score-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.trust-score-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.trust-score-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--success), var(--primary));
+    border-radius: 4px;
+    transition: width 1s ease-out;
+}
+
+.trust-score-interpretation {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.75rem;
+}
+
+/* ================================
+   ANALYSIS SECTIONS
+   ================================ */
+
+.analysis-section {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+}
+
+.analysis-section h3 {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.analysis-content {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.insight-list {
+    list-style: none;
+    padding: 0;
+}
+
+.insight-list li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.insight-list li:last-child {
+    border-bottom: none;
+}
+
+.insight-list li:before {
+    content: "→ ";
+    color: var(--primary);
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+/* ================================
+   EMOTION TIMELINE
+   ================================ */
+
+.emotion-timeline {
+    margin-top: 1rem;
+}
+
+.timeline-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.emotion-bar {
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(90deg, 
+        #ff6b9d 0%, 
+        #fbbf24 25%, 
+        #4ade80 50%, 
+        #00d4ff 75%, 
+        #a366ff 100%);
+    border-radius: var(--radius-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.emotion-marker {
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    top: 0;
+}
+
+/* ================================
+   RISK INDICATORS
+   ================================ */
+
+.risk-indicators {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.risk-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+}
+
+.risk-item.high {
+    border-left: 3px solid var(--danger);
+}
+
+.risk-item.medium {
+    border-left: 3px solid var(--warning);
+}
+
+.risk-item.low {
+    border-left: 3px solid var(--success);
+}
+
+.risk-badge {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.risk-item.high .risk-badge {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--danger);
+}
+
+.risk-item.medium .risk-badge {
+    background: rgba(251, 191, 36, 0.2);
+    color: var(--warning);
+}
+
+.risk-item.low .risk-badge {
+    background: rgba(74, 222, 128, 0.2);
+    color: var(--success);
+}
+
+.risk-text {
+    flex: 1;
+}
+
+/* ================================
+   DISCLAIMER SECTION
+   ================================ */
+
+.demo-disclaimer {
+    padding: 2rem var(--spacing-lg);
+    background: linear-gradient(180deg, transparent 0%, rgba(239, 68, 68, 0.05) 100%);
+}
+
+.disc-content {
+    padding: 1.5rem;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.disc-content h3 {
+    color: var(--danger);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.disc-content p {
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.disc-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.disc-content li {
+    padding: 0.5rem 0;
+    color: var(--text-primary);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.disc-content li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--warning);
+    font-weight: 700;
+}
+
+/* ================================
+   LOADING STATE
+   ================================ */
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    gap: 1rem;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(0, 212, 255, 0.2);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ================================
+   VOICE UPLOAD & SNK ANALYSIS
+   ================================ */
+
+#voiceInput {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(0, 212, 255, 0.05);
+    border: 2px dashed var(--primary);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+#voiceInput:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: var(--secondary);
+}
+
+.snk-section,
+.ai-section,
+.human-section,
+.mixed-section {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.snk-section {
+    border-left: 4px solid #00d4ff;
+}
+
+.ai-section {
+    border-left: 4px solid #a366ff;
+}
+
+.human-section {
+    border-left: 4px solid #00ff88;
+}
+
+.mixed-section {
+    border-left: 4px solid #ffaa00;
+}
+
+/* Keyword badges */
+.keyword-badge {
+    display: inline-block;
+    background: rgba(0, 212, 255, 0.2);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin: 4px;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.emotion-badge {
+    display: inline-block;
+    background: rgba(255, 170, 0, 0.2);
+    color: #ffaa00;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin: 4px;
+    border: 1px solid rgba(255, 170, 0, 0.3);
+}
+
+/* Enable Grok checkbox styling */
+#enableGrok {
+    width: auto;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+label[for="enableGrok"] {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-primary);
+    user-select: none;
+}
+
+label[for="enableGrok"] span {
+    margin-left: 0.5rem;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+@media (max-width: 1024px) {
+    .demo-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .demo-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .demo-hero p {
+        font-size: 1rem;
+    }
+
+    .panel-header h2 {
+        font-size: 1.1rem;
+    }
+
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+
+    .trust-score-value {
+        font-size: 2rem;
+    }
+
+    .btn-sample {
+        min-width: 100px;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .demo-section {
+        padding: 1.5rem var(--spacing-md);
+    }
+
+    .demo-panel {
+        border-radius: var(--radius-md);
+    }
+
+    .form-group textarea {
+        height: 200px;
+    }
+
+    .risk-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .risk-badges {
+        width: 100%;
+        justify-content: end;
+    }
+}
